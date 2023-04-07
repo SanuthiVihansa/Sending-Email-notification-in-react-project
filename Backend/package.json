@@ -1,5 +1,23 @@
 {
   "dependencies": {
     "express": "^4.18.2"
-  }
+  },
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SanuthiVihansa/Sending-Email-notification-in-react-project.git"
+  },
+  "author": "Sanuthi Vihansa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SanuthiVihansa/Sending-Email-notification-in-react-project/issues"
+  },
+  "homepage": "https://github.com/SanuthiVihansa/Sending-Email-notification-in-react-project#readme",
+  "description": ""
 }
