@@ -1,9 +1,9 @@
-const mail =()=>{
+const Mail =()=>{
     const [formState,setFormState]=useState({});
 
 const changeHandler = (event)=>{
     setFormState({...formState,[event.target.name]: event.target.value});
-}
+};
 
     return(
         <div>
@@ -18,4 +18,4 @@ const changeHandler = (event)=>{
     );
 };
 
-export default mail;
+export default Mail;
