@@ -1,18 +1,32 @@
-const Mail =()=>{
-    const [formState,setFormState]=useState({});
+import React, { useState } from 'react';
 
-const changeHandler = (event)=>{
-    setFormState({...formState,[event.target.name]: event.target.value});
-};
+const Mail = () => {
+    const [formState, setFormState] = useState({ name: '', email: '' });
 
-    return(
+    const changeHandler = (event) => {
+        setFormState({ ...formState, [event.target.name]: event.target.value });
+    };
+
+    return (
         <div>
             <h1>Sample Email</h1>
             <form>
-                Name : <input type="text" name = "name" value="" onChange={changeHandler}/> 
-                <br></br>
-                Email :<input type="email" name = "email" value="" onChange={changeHandler}/>
-                <input type="Submit" value="Send Email"/>
+                Name :{' '}
+                <input
+                    type="text"
+                    name="name"
+                    value={formState.name}
+                    onChange={changeHandler}
+                />
+                <br />
+                Email :
+                <input
+                    type="email"
+                    name="email"
+                    value={formState.email}
+                    onChange={changeHandler}
+                />
+                <input type="Submit" value="Send Email" />
             </form>
         </div>
     );
