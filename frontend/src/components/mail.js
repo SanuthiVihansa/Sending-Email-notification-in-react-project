@@ -4,10 +4,7 @@ const Mail = () => {
     const [formState, setFormState] = useState({ name: '', email: '' });
 
     const config ={
-        Host : "smtp.elasticemail.com",
-        Username : "sanumail@yopmail.com",
-        Password : "8F083563841154A221EBC1B85D41139D6ED4",
-        Port:2525,
+        SecureToken : "a48f0e32-e90a-4a63-a155-ced14f04ca61",
         To : 'them@website.com',
         From : "you@isp.com",
         Subject : "This is the subject",
