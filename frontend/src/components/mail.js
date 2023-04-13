@@ -3,26 +3,36 @@ import React, { useState } from 'react';
 const Mail = () => {
     const [formState, setFormState] = useState({ name: '', email: '' });
 
-    const config ={
-        SecureToken : "a48f0e32-e90a-4a63-a155-ced14f04ca61",
-        To : 'them@website.com',
-        From : "you@isp.com",
-        Subject : "This is the subject",
-        Body : "And this is the body"
-    }
+  
     const changeHandler = (event) => {
         setFormState({ ...formState, [event.target.name]: event.target.value });
     };
 
+    const submitHandler =(e) =>{
+        e.preventDefault();
+        const config ={
+            SecureToken : "4e036695-ad15-4eed-ab80-3350dbcf2267 ",
+            To : "sanumail@yopmail.com",
+            From : formState.email,
+            Subject : "Email generation using react",
+            Body : `${formState.name} connected via email`
+        }
+        if(window.Email){
+            window.Email.send(config).then(()=>{
+                alert("Email sent successfully");
+            });
+        }
+    }
+
     return (
         <div>
             <h1>Sample Email</h1>
-            <form>
+            <form onSubmit={submitHandler}>
                 Name :{' '}
                 <input
                     type="text"
                     name="name"
-                    value={formState.name}
+                    value={formState.name || ''}
                     onChange={changeHandler}
                 />
                 <br />
@@ -30,7 +40,7 @@ const Mail = () => {
                 <input
                     type="email"
                     name="email"
-                    value={formState.email}
+                    value={formState.email || ''}
                     onChange={changeHandler}
                 />
                 <input type="Submit" value="Send Email" />
